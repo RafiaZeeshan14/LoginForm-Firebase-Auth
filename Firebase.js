@@ -11,55 +11,61 @@ const firebaseConfig = {
   const frb = firebase.initializeApp(firebaseConfig);
   console.log(frb.database)
   
-  function Signup(){
-       var SignUpEmail = document.getElementById("SignUpEmail")
-       var SignUpPass = document.getElementById("SignUpPass")
-      //  console.log(email.value, password.value)
-       firebase.auth().createUserWithEmailAndPassword(SignUpEmail.value, SignUpPass.value)  //built-in code of Email/Pass Auth
-    .then((userCredential) => {
-      // Signed in 
-      var user = userCredential.user;
-      console.log(user)
-      window.location.href = 'SignIn.html?signupSuccess=true';
+
+  function Signup() {
+    var SignUpEmail = document.getElementById("SignUpEmail");
+    var SignUpPass = document.getElementById("SignUpPass");
   
+    if (SignUpEmail.value.trim() === '' || SignUpPass.value.trim() === '') {
+      // Display an alert or a modal prompting the user to enter email and password
+      alert('Please enter your email and password');
+      return; // Exit the function if email or password is empty
+    }
+  
+    firebase.auth().createUserWithEmailAndPassword(SignUpEmail.value, SignUpPass.value)
+      .then((userCredential) => {
+        var user = userCredential.user;
+        console.log("User created:", user);
+  
+        // Redirect after successful signup
+        window.location.href = 'SignIn.html'; 
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.error("Signup error:", errorMessage);
+        // Handle signup errors if needed
+      });
+  }
+  
+
+
+function login() {
+  var SignInEmail = document.getElementById("SignInEmail");
+  var SignInPass = document.getElementById("SignInPass");
+  console.log(SignInEmail.value, SignInPass.value)
+  if (SignInEmail.value.trim() === '' || SignInPass.value.trim() === '') {
+    // Display an alert or a modal prompting the user to enter email and password
+    alert('Please enter your email and password');
+    return; // Exit the function if email or password is empty
+  }
+
+  firebase.auth().signInWithEmailAndPassword(SignInEmail.value, SignInPass.value)
+    .then((userCredential) => {
+      var user = userCredential.user;
+      console.log("User logged in:", user);
+
+      // Redirect after successful login
+      window.location.href = 'welcome.html';
     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorMessage)
-  
+      console.error("Login error:", errorMessage);
+      // Handle login errors if needed
     });
-    
-  }
-
-
-  function login(){
-    var SignInEmail = document.getElementById("SignInEmail")
-    var SignInPass = document.getElementById("SignInPass")
-    // console.log(SignInEmail.value, SignInPass.value)
-
-    firebase.auth().signInWithEmailAndPassword(SignInEmail.value, SignInPass.value)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    console.log(user)
-    window.location.href = 'Welcome.html';
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorMessage)
-  });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const signupSuccess = urlParams.get('signupSuccess');
-
-  if (signupSuccess === 'true') {
-    alert('Signed Up Successfully ! Please Login..');
-  }
-});
 
 
 

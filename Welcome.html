@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font-Awsome-CDN-Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google-Fonts-CDN-Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Firebase-Authentication-Links -->
+    <script src=" https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src=" https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src=" https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login-Form-Using-Firebase</title>
+    <style>
+        .pic-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        }
+    </style>
+</head>
+
+<body style="font-family: 'Poppins', sans-serif;">
+
+    <div class=" min-h-screen w-full bg-no-repeat bg-cover bg-fixed bg-center"
+        style="background-image: url('meeting-room.jpg');">
+        <div class="pic-overlay"></div>
+        <div class="flex flex-col justify-center">
+            <h1 class="absolute text-5xl text-white top-1/2 left-1/2 leading-[1.1]
+            transform -translate-x-1/2 -translate-y-1/2 font-bold flex justify-center items-center md:text-6xl lg:text-7xl">Welcome !</h1>
+            <p class="absolute z-[1] top-1/2 mt-16 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[42rem] leading-normal text-white sm:text-xl sm:leading-8">You're
+                <strong>Logged In</strong> Successfully..
+            </p>
+        </div>
+    </div>
+
+
+
+    </div>
+    <script src="Firebase.js"></script>
+</body>
+
+</html>

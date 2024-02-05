@@ -1,4 +1,4 @@
-# LoginForm Using Firebase Auth
+# LoginForm Using Firebase Authentication
 
 # Live Demo 
 https://tiny-custard-389982.netlify.app/

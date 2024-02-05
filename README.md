@@ -1,7 +1,7 @@
 # LoginForm Using Firebase Authentication
 
 # Live Demo 
-https://tiny-custard-389982.netlify.app/
+https://login-form-firebase-auth.netlify.app/
 
 ## Description
 This project is a login form application that utilizes Firebase Authentication to store user information
@@ -25,6 +25,13 @@ Once the project is set up, you can use the following functionalities:
 This project makes use of the following technologies:
 - Firebase Authentication
 - JavaScript
-
-## Framework
 - Tailwind CSS
+  
+# Sign Up Page Preview
+![image](https://github.com/RafiaZeeshan14/LoginForm-Firebase-Auth/assets/141746940/1c33ed09-1495-4619-865f-5e187daea461)
+
+# Sign In Page Preview
+![image](https://github.com/RafiaZeeshan14/LoginForm-Firebase-Auth/assets/141746940/b70ca222-a162-4609-a0d8-66c2c8504fef)
+
+
+
